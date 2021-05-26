@@ -34,6 +34,8 @@ class ChatProvider extends ChangeNotifier {
   void initializeChatData() {
     chatRepo.getChatListQuestion();
     chatRepo.getChatListAnswer();
+    _allChatData = [];
+    _allChatData.add(ChatModel('Welcome to city University, how can i help you?', false, -10));
     notifyListeners();
   }
 

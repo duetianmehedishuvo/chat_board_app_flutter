@@ -12,7 +12,7 @@ import 'package:tutorial/provider/theme_provider.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  // Core
+
 
   // Repository
   sl.registerLazySingleton(() => LanguageRepo());

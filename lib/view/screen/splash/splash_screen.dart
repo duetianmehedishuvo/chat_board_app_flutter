@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(getTranslated('splash_screen', context), style: Theme.of(context).textTheme.headline2),
+            Text('Welcome to Our University.', style: Theme.of(context).textTheme.headline2),
           ],
         ),
       ),
