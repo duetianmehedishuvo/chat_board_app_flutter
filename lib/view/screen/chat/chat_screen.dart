@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:provider/provider.dart';
@@ -6,6 +9,7 @@ import 'package:tutorial/data/model/response/chatModel.dart';
 import 'package:tutorial/localization/language_constrants.dart';
 import 'package:tutorial/provider/chat_provider.dart';
 import 'package:tutorial/util/color_resources.dart';
+import 'package:tutorial/util/image.dart';
 import 'package:tutorial/util/styles.dart';
 import 'package:tutorial/view/widgets/message_bubble.dart';
 
@@ -16,6 +20,7 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   TextEditingController controller = TextEditingController();
+  GlobalKey<AutoCompleteTextFieldState<String>> key = new GlobalKey();
   stt.SpeechToText _speech;
   bool _isListening = false;
 
@@ -75,8 +80,19 @@ class _ChatScreenState extends State<ChatScreen> {
                                 _listen();
                               },
                             ),
+
+
                             Expanded(
                               child: TypeAheadField(
+                                noItemsFoundBuilder: (context)=>Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                  child: Text(
+                                    'I am still learning when I learn all then I can give you this information, Thank you.',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.black45, fontSize: 18.0),
+                                  ),
+                                ),
                                 textFieldConfiguration: TextFieldConfiguration(
                                     controller: controller,
                                     style: rubikMedium.copyWith(color: Colors.white),
@@ -122,6 +138,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         color: ColorResources.COLOR_WHITE,
+                        image: DecorationImage(image: new ExactAssetImage(Images.city_university), fit: BoxFit.cover),
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50))),
                     child: chatProvider.allChatData.length > 0
                         ? ListView.builder(

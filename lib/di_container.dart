@@ -13,7 +13,6 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
 
-
   // Repository
   sl.registerLazySingleton(() => LanguageRepo());
   sl.registerLazySingleton(() => ChatRepo());

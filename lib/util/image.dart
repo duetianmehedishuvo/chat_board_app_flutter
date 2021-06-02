@@ -1,10 +1,9 @@
 class Images{
 
   //Icon
-  static final String logo='assets/icon/efood.png';
+  static final String logo='';
 
 
   //Image
-  static final String chaina='assets/image/china.png';
-  static final String clock='assets/image/clock.png';
+  static final String city_university='assets/image/city_university.jpg';
 }

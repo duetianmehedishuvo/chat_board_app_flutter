@@ -1,6 +1,6 @@
 {
-    "name": "tutorial",
-    "short_name": "tutorial",
+    "name": "City University",
+    "short_name": "City University",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

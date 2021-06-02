@@ -15,21 +15,22 @@ class MessageBubble extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          !isMe ? SizedBox() : CircleAvatar(child: Icon(Icons.person, color: Colors.white),
-              backgroundColor: Color(0x96707070)),
+          !isMe ? SizedBox() : CircleAvatar(child: Icon(Icons.person, color: Colors.orange),
+              backgroundColor: Colors.white),
           Expanded(
             child: Container(
-                margin: !isMe ? EdgeInsets.only(top: 5, bottom: 5, left: 80, right: 10) : EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 80),
+                margin: !isMe ? EdgeInsets.only(top: 5, bottom: 5, left: 80, right: 10) :
+                EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 80),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         bottomLeft: isMe ? Radius.circular(15) : Radius.circular(0),
                         bottomRight: isMe ? Radius.circular(0) : Radius.circular(15),
                         topRight: Radius.circular(15)),
-                    color: isMe ? Color(0x96707070) : ColorResources.COLOR_PRIMARY),
+                    color: isMe ? Colors.white : ColorResources.COLOR_PRIMARY),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  child: Text(text, style: TextStyle(color: Colors.white, fontSize: Dimensions.FONT_SIZE_DEFAULT)),
+                  child: Text(text, style: TextStyle(color: isMe?Colors.black:Colors.white, fontSize: Dimensions.FONT_SIZE_DEFAULT)),
                 )),
           ),
         ],

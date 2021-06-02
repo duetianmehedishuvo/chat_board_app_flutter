@@ -30,11 +30,19 @@ class ChatProvider extends ChangeNotifier {
   }
 
   // for auto suggesstion
+  List<String> _allQuestion = [];
+
+  List<String> get allQuestion => _allQuestion;
 
   void initializeChatData() {
     chatRepo.getChatListQuestion();
     chatRepo.getChatListAnswer();
     _allChatData = [];
+    _allQuestion = [];
+    chatRepo.getChatListQuestion().forEach((element) {
+      _allQuestion.add(element.message);
+    });
+
     _allChatData.add(ChatModel('Welcome to city University, how can i help you?', false, -10));
     notifyListeners();
   }

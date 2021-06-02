@@ -1,6 +1,7 @@
 import 'package:tutorial/data/model/response/chatModel.dart';
 
 class ChatRepo {
+
   List<ChatModel> getChatListQuestion() {
     List<ChatModel> questionList = [
       ChatModel('Hi', true, 0),
