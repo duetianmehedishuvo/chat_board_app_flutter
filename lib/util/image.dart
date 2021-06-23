@@ -5,5 +5,5 @@ class Images{
 
 
   //Image
-  static final String city_university='assets/image/city_university.jpg';
+  static final String cityUniversity='assets/image/city_university.jpg';
 }

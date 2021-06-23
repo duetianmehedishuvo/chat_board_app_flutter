@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:provider/provider.dart';
@@ -20,11 +19,12 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   TextEditingController controller = TextEditingController();
-  GlobalKey<AutoCompleteTextFieldState<String>> key = new GlobalKey();
   stt.SpeechToText _speech;
   bool _isListening = false;
-
+  
   void _listen() async {
+
+
     if (!_isListening) {
       bool available = await _speech.initialize(
         onStatus: (val) => print('onStatus: $val'),
@@ -138,7 +138,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         color: ColorResources.COLOR_WHITE,
-                        image: DecorationImage(image: new ExactAssetImage(Images.city_university), fit: BoxFit.cover),
+                        image: DecorationImage(image: new ExactAssetImage(Images.cityUniversity), fit: BoxFit.cover),
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50))),
                     child: chatProvider.allChatData.length > 0
                         ? ListView.builder(

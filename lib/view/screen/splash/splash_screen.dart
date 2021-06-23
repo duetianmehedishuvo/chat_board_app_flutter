@@ -2,12 +2,14 @@ import 'dart:async';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:tutorial/localization/language_constrants.dart';
 import 'package:tutorial/util/styles.dart';
 import 'package:tutorial/view/screen/chat/chat_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     Timer(Duration(seconds: 5), () async {
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => ChatScreen()));
     });
@@ -17,7 +19,7 @@ class SplashScreen extends StatelessWidget {
         child: AnimatedTextKit(
           animatedTexts: [
             TypewriterAnimatedText(
-              'Welcome To City University',
+              getTranslated('welcome_to_city_university', context),
               textStyle: rubikMedium.copyWith(color: Colors.deepOrange, fontSize: 20),
               speed: const Duration(milliseconds: 200),
             ),
